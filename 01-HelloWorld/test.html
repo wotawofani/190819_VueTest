@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test">
+        <input type="text" v-model='msg'>
+        <p>hello {{msg}}</p>
+
+        <button v-on:click="test"></button> 
+        <button @:click="test"></button>        <!-- 简写形式 -->
+    </div>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.0-beta.13/vue.global.js"></script> -->
+    <script src="http://cdn.bootcss.com/vue/2.6.10/vue.js" charset="utf-8"></script>
+
+    <script>
+
+        new Vue({
+            el:'#test',
+            data: {
+                msg: 'nimabi'
+
+            },
+            methods: {
+                test (event) {
+                    
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
