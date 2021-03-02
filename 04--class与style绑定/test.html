@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .classA{
+            color: red;
+        }
+        .classB {
+            color: blue;
+        }
+        .classC{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <p :class="myClass">xxxxx</p>
+
+        <p :class='{classA:hasA, classB:hasB}'>此种悠久</p>
+
+        <p :class="['classA','classB']">此种悠久</p>    <!-- 等于 class='classA classB' -->
+
+        <p :style="{color:activeColor,fontSize:fontSize}">xxxx</p>
+
+        <button @click='update' value="更新颜色">更新颜色</button>
+    </div>
+    <script src="http://cdn.bootcss.com/vue/2.6.10/vue.js" charset="utf-8"></script>
+    <script>
+        new Vue({
+            data:{
+                myClass:'classA',
+                hasA:false,
+                hasB:true,
+                activeColor:'red',
+                fontSize:'20px',
+            },
+            methods: {
+                update() {
+                    this.myClass = 'classB';
+                    this.hasA = !this.hasA;
+                    this.hasB = !this.hasB;
+                    this.activeColor = '#aaa',
+                    this.fontSize = '30px'
+                }
+            },
+        }).$mount('#demo');
+    </script>
+</body>
+</html>
